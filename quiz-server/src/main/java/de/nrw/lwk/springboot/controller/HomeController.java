@@ -6,22 +6,16 @@
 
 package de.nrw.lwk.springboot.controller;
 
-
-
 import org.springframework.stereotype.Controller;
-
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
 /**
-
+ * 
  * @author Swathi
-
  *
-
+ * 
+ * 
  */
 
 @Controller
@@ -30,8 +24,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class HomeController {
 
-	
-
 	@GetMapping
 
 	public String home() {
@@ -39,7 +31,5 @@ public class HomeController {
 		return "forward:/index.html";
 
 	}
-
-
 
 }
