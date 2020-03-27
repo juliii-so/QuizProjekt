@@ -1,0 +1,13 @@
+table {
+    color: rgb(0, 0, 0);
+    border-collapse:collapse;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+tr {
+    border-bottom: solid 1px rgb(145, 255, 0);
+}
+th{
+    border-bottom:solid 2px rgb(145, 255, 0);
+    font-weight:bolder;
+}

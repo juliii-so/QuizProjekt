@@ -1,0 +1,84 @@
+body {
+    background-image: url("assets/pictures/background.jpg");
+    background-repeat: repeat;
+    background-size: 300px;
+    background-color: rgb(139, 91, 0);
+}
+div.inhalt {
+    background-color: rgb(255, 255, 255);
+
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    width: 50%;
+    min-width: 300px;
+    margin: auto;
+    padding: 5%;
+}
+
+div.text {
+    color: rgb(0, 0, 0);
+}
+button {
+    background-color: white;
+    border-style: solid;
+    margin-top: 5px;
+    color: darkcyan;
+    border-color: darkcyan;
+}
+
+button {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+button:hover {
+    background-color: white;
+    color: cyan;
+    border-color: cyan;
+}
+button:active {
+    background-color: cyan;
+    color: white;
+}
+button.richtig,
+button.richtig:hover,
+button.richtig:active {
+    background-color: rgb(160, 223, 88);
+    color: white;
+    border-color: darkcyan;
+}
+button.falsch,
+button.falsch:hover,
+button.falsch.active {
+    background-color: rgb(255, 52, 52);
+    color: white;
+    border-color: darkcyan;
+}
+button.nichtgewaehlt,
+button.nichtgewaehlt:hover,
+button.nichtgewaehlt.active {
+    opacity: 0.5;
+}
+
+h1 {
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: "Courier New", Courier, monospace;
+}
+h2 {
+    padding: 5px;
+    background-color: rgb(255, 187, 123);
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    font-family: "Courier New", Courier, monospace;
+}
+h3 {
+    padding: 5px;
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: "Courier New", Courier, monospace;
+}

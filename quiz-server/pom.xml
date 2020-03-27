@@ -58,10 +58,10 @@
                                    <goal>copy-resources</goal>
                               </goals>
                               <configuration>
-                                   <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+                                   <outputDirectory>C:\Users\julia\Documents\Arbeit\QuizProjekt\quiz-server\src\main\webapp\</outputDirectory>
                                    <resources>
                                         <resource>
-                                             <directory>${project.parent.basedir}/quiz-web/src/main/web/dist/quiz-app/</directory>
+                                             <directory>C:\Users\julia\Documents\Arbeit\QuizProjekt\quiz-web\dist\quiz-app</directory>
                                         </resource>
                                    </resources>
                               </configuration>

@@ -1,0 +1,6 @@
+/quiz-web/node_modules
+/quiz-web/src/main/web/node
+/quiz-server/src/main/webapp
+/quiz-server/target
+.settings
+*.war

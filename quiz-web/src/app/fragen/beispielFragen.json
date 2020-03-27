@@ -1,0 +1,41 @@
+[
+    {
+        "id": 0,
+        "frage": "Wo leben Pinguine?",
+        "richtig": 3,
+        "antwort": [
+            "In der Arktis",
+            "In der Nordsee",
+            "In der russischen Tundra",
+            "In der Antarktis"
+        ]
+    },
+    {
+        "id": 1,
+        "frage": "Wo leben Kängurus?",
+        "richtig": 1,
+        "antwort": [
+            "In der Arktis",
+            "In Australien",
+            "In der Nordsee",
+            "In der russischen Tundra"
+        ]
+    },
+    {
+        "id": 2,
+        "frage": "Wie viele Zehen hat ein Seidenhuhn?",
+        "richtig": 2,
+        "antwort": [
+            "8 Zehen, wie alle anderen Hühner auch",
+            "Hühner haben gar keine Zehen",
+            "5 Zehen an jedem Fuß",
+            "3 Zehen an jedem Fuß"
+        ]
+    },
+    {
+        "id": 3,
+        "frage": "Welche Farbe haben die Eier der Hühner der Rasse Araucana?",
+        "richtig": 1,
+        "antwort": ["weiß", "blau-grün", "dunkelbraun-rot", "hellbraun"]
+    }
+]

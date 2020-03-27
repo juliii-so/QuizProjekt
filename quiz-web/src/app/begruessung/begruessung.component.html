@@ -1,0 +1,30 @@
+<div class="titel">Das große Quiz der Tiere</div>
+<div class="text">
+    <p>
+        Bist du ein richtiger Tierkenner? Dann stelle dein Wissen unter den
+        Beweis beim großen Quiz!
+    </p>
+    <p>
+        Du kannst dich mit den anderen Spieler vergleichen und schauen, auf
+        welchen Platz des Highscores du es schaffst. Dann siehst du, wer der
+        wahre Tierexperte ist.
+    </p>
+    <p>
+        Damit du in die Highscore-Liste eingetragen werden kannst, musst du hier
+        deinen Namen eingeben:
+    </p>
+    <div id="namensEingabe">
+        <input
+            #neuerName
+            (keyup.enter)="nameSpeichern(neuerName.value)"
+            (blur)="nameSpeichern(neuerName.value); neuerName.value = ''"
+        />
+        <button class="speichern" (click)="nameSpeichern(neuerName.value)">
+            Speichern
+        </button>
+    </div>
+    <p>Letzte Spieler</p>
+    <ul>
+        <li *ngFor="let name of namen">{{ name }}</li>
+    </ul>
+</div>

@@ -1,0 +1,20 @@
+div.titel {
+    font-family: "Courier New", Courier, monospace;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(106, 250, 255);
+    background-color: rgb(119, 91, 65);
+    display: block;
+}
+#namensEingabe{
+    width:100%;
+}
+button.speichern {
+    display:inline-block;
+    width:30%;
+    text-align: center;
+}
+input {
+    display:inline-block;
+    width:70%;
+}
