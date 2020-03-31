@@ -25,7 +25,7 @@ export class FragenComponent implements OnInit {
         } else {
             // punkte(false) an server
         }
-        for (let i = 0; i < 4; i++) {
+        for (let i = 1; i <= 4; i++) {
             document
                 .getElementsByClassName('antwort' + i + 'frage' + frage)[0]
                 .classList.add(i === richtig ? 'richtig' : 'falsch');

@@ -11,3 +11,12 @@ th{
     border-bottom:solid 2px rgb(145, 255, 0);
     font-weight:bolder;
 }
+.wichtig{
+    min-width: 50px;
+}
+.unwichtig{
+    width:30%;
+}
+.platz{
+    width:50px;
+}
