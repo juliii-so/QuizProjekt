@@ -1,8 +1,10 @@
+import { FragenService } from './fragen/fragen.service';
 import { ErgebnisComponent } from './ergebnis/ergebnis.component';
 import { BegruessungComponent } from './begruessung/begruessung.component';
 import { FragenComponent } from './fragen/fragen.component';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -16,9 +18,14 @@ import { AppComponent } from './app.component';
         ErgebnisComponent
     ],
 
-    imports: [BrowserModule, HttpClientModule, HttpClientJsonpModule],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        HttpClientModule,
+        HttpClientJsonpModule
+    ],
 
-    providers: [],
+    providers: [FragenService],
 
     bootstrap: [AppComponent]
 })
