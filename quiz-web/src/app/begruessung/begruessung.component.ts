@@ -1,3 +1,4 @@
+import { NamensService } from './namens.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,10 +11,11 @@ import { Component } from '@angular/core';
 export class BegruessungComponent {
     title = 'quiz-app';
     namen = ['Tania', 'Kira', 'Franka'];
-    constructor() {}
+    constructor(private namensService: NamensService) {}
     nameSpeichern(neuerName: string) {
         console.log(neuerName);
         if (neuerName) {
+            this.namensService.aktualisiereAktuellenNamen(neuerName);
             this.namen.push(neuerName);
         }
     }

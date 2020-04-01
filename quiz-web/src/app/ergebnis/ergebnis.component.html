@@ -17,12 +17,12 @@
         <th class="unwichtig">richtige Antworten</th>
         <th class="wichtig">Punktewertung</th>
     </tr>
-    <tr>
-        <td class="platz">count</td>
-        <td class="wichtig">+Name+</td>
-        <td class="unwichtig">+Anzahl beantwortete Fragen+</td>
-        <td class="unwichtig">+Anzahk richtige Antworten+</td>
-        <td class="wichtig">+Punktewertung+</td>
+    <tr *ngFor="let highscore of highscoreListe$">
+        <td class="platz">{{highscore.platz}}</td>
+        <td class="wichtig">{{highscore.platz}}</td>
+        <td class="unwichtig">{{highscore.platz}}</td>
+        <td class="unwichtig">{{highscore.platz}}</td>
+        <td class="wichtig">{{highscore.platz}}</td>
     </tr>
 </table>
 
