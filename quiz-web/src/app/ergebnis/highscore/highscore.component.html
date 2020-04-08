@@ -1,0 +1,25 @@
+
+<h1>Highscore Ranking:</h1>
+<p>
+    Hier kommen die ersten 10 Einträge der Highscore Tabelle, nach Punktzahl
+    sortiert.
+</p>
+<table>
+    <tr>
+        <th class="platz">Platz:</th>
+        <th class="wichtig">Name</th>
+        <th class="unwichtig">beantwortete Fragen</th>
+        <th class="unwichtig">richtige Antworten</th>
+        <th class="wichtig">Punktewertung</th>
+    </tr>
+    <tr *ngFor="let highscore of highscoreListe;let i=index" [attr.data-index]="i">
+        <td class="platz">{{i+1}}</td>
+        <td class="wichtig">{{ highscore.name }}</td>
+        <td class="unwichtig">{{ highscore.anzahlFragen }}</td>
+        <td class="unwichtig">{{ highscore.anzahlRichtig }}</td>
+        <td class="wichtig">{{ highscore.punkte }}</td>
+    </tr>
+</table>
+
+Feature, was noch kommen kann: Tabellenminimierung, wenn der Platz zu eng wird,
+dann wird nur noch Platz, Name und Punktewertung angezeigt.

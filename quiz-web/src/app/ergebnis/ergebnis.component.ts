@@ -1,7 +1,5 @@
-import { ErgebnisService } from './ergebnis.service';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Person } from './person';
+import { Component } from '@angular/core';
+import { NamensService } from './../begruessung/namens.service';
 
 @Component({
     selector: 'app-ergebnis',
@@ -10,13 +8,8 @@ import { Person } from './person';
 
     styleUrls: ['./ergebnis.component.css']
 })
-export class ErgebnisComponent implements OnInit {
-    title = 'quiz-app';
-    private highscoreListe$: Observable<Person[]>;
-    constructor(private ergebnisService: ErgebnisService) {}
-    ngOnInit() {
-        this.highscoreListe$ = this.ergebnisService.getHighscoreListe();
-        this.highscoreListe$.subscribe(() => this.aktualisieren());
-    }
-    async aktualisieren() {}
+export class ErgebnisComponent {
+
+    constructor(public namensService: NamensService) {}
+
 }

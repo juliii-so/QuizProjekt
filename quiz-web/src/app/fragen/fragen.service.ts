@@ -1,3 +1,6 @@
+import { ErgebnisService } from './../ergebnis/ergebnis.service';
+import { NamensService } from './../begruessung/namens.service';
+import { PostDatenSpieler } from './postDatenSpieler';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, tap } from 'rxjs/operators';
@@ -5,33 +8,21 @@ import { Frage, FrageI } from './frage';
 import { FrageGemischt } from './frageGemischt';
 @Injectable()
 export class FragenService {
-    private url = '/getFrage';
-    constructor(private _http: HttpClient) {}
-
-    getFragen() {
-        console.log('HTTP Reequest in Fragenservice abgesendet');
-        const requestDaten = this._http.get<Frage[]>('/getFragen');
-        console.log('REQUEST DATEN: ' + requestDaten);
-        return requestDaten;
-    }
+    private urlFrage = '/getFrage';
+    private urlAnzahl = '/getAnzahl';
+    constructor(
+        private _http: HttpClient,
+        private namensService: NamensService,
+        private ergebnisService: ErgebnisService
+    ) {}
 
     async getFrage(index: number) {
-        console.log(
-            'TEST F1 HTTP Request wird in Fragenservice wird abgesendet'
-        );
         let params = new HttpParams();
         params = params.append('index', index.toString());
 
-        console.log(
-            'TEST F2 HTTP Request in Fragenservice hat Parameter vorbereitet' +
-                params
-        );
         return await this._http
-            .get<FrageI>(this.url, { params: params })
+            .get<FrageI>(this.urlFrage, { params: params })
             .pipe(
-                tap(requestDaten =>
-                    console.log('F3 REQUEST DATEN: ' + requestDaten)
-                ),
                 map(requestDaten => {
                     return new FrageGemischt(
                         new Frage(
@@ -45,5 +36,8 @@ export class FragenService {
                 })
             )
             .toPromise();
+    }
+    async getAnzahl() {
+        return await this._http.get<number>(this.urlAnzahl).toPromise();
     }
 }

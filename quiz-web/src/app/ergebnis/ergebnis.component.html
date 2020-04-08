@@ -1,30 +1,3 @@
-<h1>Auswertung:</h1>
-<p>
-    Du hast +Anzahl gelöste Fragen+ Fragen beantwortet. Davon waren +Anzahl
-    richtige Antworten+ Antworten richtig. Somit hast du +Punktewertung+ Punkte
-    erreicht.
-</p>
-<h1>Highscore Ranking:</h1>
-<p>
-    Hier kommen die ersten 10 Einträge der Highscore Tabelle, nach Punktzahl
-    sortiert.
-</p>
-<table>
-    <tr>
-        <th class="platz">Platz:</th>
-        <th class="wichtig">Name</th>
-        <th class="unwichtig">beantwortete Fragen</th>
-        <th class="unwichtig">richtige Antworten</th>
-        <th class="wichtig">Punktewertung</th>
-    </tr>
-    <tr *ngFor="let highscore of highscoreListe$">
-        <td class="platz">{{highscore.platz}}</td>
-        <td class="wichtig">{{highscore.platz}}</td>
-        <td class="unwichtig">{{highscore.platz}}</td>
-        <td class="unwichtig">{{highscore.platz}}</td>
-        <td class="wichtig">{{highscore.platz}}</td>
-    </tr>
-</table>
+<app-persoenlich></app-persoenlich>
 
-Feature, was noch kommen kann: Tabellenminimierung, wenn der Platz zu eng wird,
-dann wird nur noch Platz, Name und Punktewertung angezeigt.
+<app-highscore></app-highscore>

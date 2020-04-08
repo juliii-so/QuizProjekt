@@ -1,4 +1,11 @@
-export class Frage {
+export interface FrageI {
+    frage: string;
+    antwortR: string;
+    antwortF1: string;
+    antwortF2: string;
+    antwortF3: string;
+}
+export class Frage implements FrageI {
     frage: string;
     antwortR: string;
     antwortF1: string;
@@ -17,12 +24,4 @@ export class Frage {
         this.antwortF2 = antwortF2;
         this.antwortF3 = antwortF3;
     }
-}
-
-export interface FrageI {
-    frage: string;
-    antwortR: string;
-    antwortF1: string;
-    antwortF2: string;
-    antwortF3: string;
 }

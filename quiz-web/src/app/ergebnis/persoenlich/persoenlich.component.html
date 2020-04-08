@@ -1,0 +1,11 @@
+<div *ngIf="aktuellerSpieler.name != ''">
+    <h1>Auswertung:</h1>
+    <p>
+        <strong>Herzlichen Glückwunsch {{ aktuellerSpieler.name }}!!!</strong>
+    </p>
+    <p>
+        Du hast {{ aktuellerSpieler.anzahlFragen }} Fragen beantwortet. Davon
+        waren {{ aktuellerSpieler.anzahlRichtig }} Antworten richtig. Somit hast
+        du {{ aktuellerSpieler.punkte }} Punkte erreicht.
+    </p>
+</div>

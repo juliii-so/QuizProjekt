@@ -36,29 +36,7 @@ public class FrageEntity {
 		this.antwortF3 = antwortF3;
 	}
 
-	public String toJson() {
-		String json = "";
 
-		Random random = new Random();
-		switch (random.nextInt(3)) {
-		case 0:
-			json = "['id'=" + id + ";'frage'=" + frage + ";'richtig'=0;'antworten'=[" + antwortR + ","
-					+ antwortF1 + "," + antwortF2 + "," + antwortF3 + "]]";
-			break;
-		case 1:
-			json = "['id'=" + id + ";'frage'=" + frage + ";'richtig'=1;'antworten'=[" + antwortF1 + ","
-					+ antwortR + "," + antwortF2 + "," + antwortF3 + "]]";
-			break;
-		case 2:
-			json = "['id'=" + id + ";'frage'=" + frage + ";'richtig'=2;'antworten'=[" + antwortF2 + "," + antwortF1
-					+ "," + antwortR + "," + antwortF3 + "]]";
-			break;
-		default:
-			json = "['id'=" + id + ";'frage'=" + frage + ";'richtig'=3;'antworten'=[" + antwortF3 + "," + antwortF1
-					+ "," + antwortF2 + "," + antwortR + "]]";
-		}
-		return json;
-	}
 
 	public String getFrage() {
 		return frage;

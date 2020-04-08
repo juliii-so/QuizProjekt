@@ -1,3 +1,7 @@
+import { PersoenlichComponent } from './ergebnis/persoenlich/persoenlich.component';
+import { HighscoreComponent } from './ergebnis/highscore/highscore.component';
+import { ButtonService } from './fragen/button.service';
+import { AntwortService } from './fragen/antwort.service';
 import { NamensService } from './begruessung/namens.service';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -15,7 +19,9 @@ import { FragenService } from './fragen/fragen.service';
         AppComponent,
         FragenComponent,
         BegruessungComponent,
-        ErgebnisComponent
+        ErgebnisComponent,
+        HighscoreComponent,
+        PersoenlichComponent
     ],
 
     imports: [
@@ -25,7 +31,13 @@ import { FragenService } from './fragen/fragen.service';
         HttpClientJsonpModule
     ],
 
-    providers: [NamensService, FragenService, ErgebnisService],
+    providers: [
+        NamensService,
+        FragenService,
+        AntwortService,
+        ErgebnisService,
+        ButtonService
+    ],
 
     bootstrap: [AppComponent]
 })

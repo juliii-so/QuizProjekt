@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs';
+import { ButtonService } from './../fragen/button.service';
 import { NamensService } from './namens.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-begruessung',
@@ -8,15 +10,36 @@ import { Component } from '@angular/core';
 
     styleUrls: ['./begruessung.component.css']
 })
-export class BegruessungComponent {
+export class BegruessungComponent implements OnInit {
     title = 'quiz-app';
-    namen = ['Tania', 'Kira', 'Franka'];
-    constructor(private namensService: NamensService) {}
+    namen: String[];
+    namen$: Observable<String[]>;
+    constructor(
+        private namensService: NamensService,
+        private buttonService: ButtonService
+    ) {}
+    ngOnInit() {
+        this.namen$ = this.namensService.getNamenObservable();
+        this.namen$.subscribe(() => this.aktualisieren());
+        this.namensService.aktualisiereNamen();
+    }
     nameSpeichern(neuerName: string) {
         console.log(neuerName);
         if (neuerName) {
             this.namensService.aktualisiereAktuellenNamen(neuerName);
             this.namen.push(neuerName);
+            // Button aktivieren
+            this.buttonService.alleAktivieren();
         }
+    }
+    async aktualisieren() {
+        this.namen$.subscribe(value => {
+            this.namen = value;
+        });
+    }
+    getNamen() {
+        this.namen$.subscribe((namen: String[]) => {
+            this.namen = namen;
+        });
     }
 }

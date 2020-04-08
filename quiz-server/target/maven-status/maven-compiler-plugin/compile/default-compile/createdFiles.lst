@@ -1,8 +1,14 @@
 de\nrw\lwk\springboot\config\SecurityConfig.class
+de\nrw\lwk\springboot\controller\NamenController.class
 de\nrw\lwk\springboot\config\ViewControllerConfig.class
 de\nrw\lwk\springboot\dto\FrageDto.class
-de\nrw\lwk\springboot\controller\HomeController.class
+de\nrw\lwk\springboot\entities\SpielerEntity.class
+de\nrw\lwk\springboot\repositories\SpielerRepository.class
 de\nrw\lwk\springboot\repositories\FragenRepository.class
+de\nrw\lwk\springboot\controller\ErgebnisController.class
+de\nrw\lwk\springboot\dto\SpielerDto.class
+de\nrw\lwk\springboot\controller\HomeController.class
+de\nrw\lwk\springboot\dto\PostDaten.class
 de\nrw\lwk\springboot\controller\FragenController.class
 de\nrw\lwk\springboot\entities\FrageEntity.class
 de\nrw\lwk\springboot\Application.class

@@ -9,6 +9,7 @@ public class ViewControllerConfig implements WebMvcConfigurer {
 	public void addViewConrollers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("index");
 		registry.addViewController("/home").setViewName("index");
+		registry.addViewController("/speichereAntwort").setViewName("index");
 
 	}
 }
