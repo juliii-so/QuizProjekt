@@ -4,6 +4,7 @@ table {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
+    text-align: right;
 }
 tr {
     padding-top: 3px;
