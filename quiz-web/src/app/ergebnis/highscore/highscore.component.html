@@ -12,7 +12,7 @@
         <th class="unwichtig">richtige Antworten</th>
     </tr>
     <tr
-        *ngFor="let highscore of highscoreListe; let i = index"
+        *ngFor="let highscore of highscoreListe; let i = index; let last = last"
         [attr.data-index]="i"
     >
         <td class="platz">{{ i + 1 }}</td>
@@ -20,5 +20,7 @@
         <td class="wichtig">{{ highscore.punkte }}</td>
         <td class="unwichtig">{{ highscore.anzahlFragen }}</td>
         <td class="unwichtig">{{ highscore.anzahlRichtig }}</td>
+
+        <div *ngIf="last">{{ checkDisplay() }}</div>
     </tr>
 </table>

@@ -33,8 +33,12 @@ export class HighscoreComponent implements OnInit {
         });
     }
     getHighscoreListe() {
+        console.log('getHIghscore wurde aufgaerienuf');
         this.highscoreListe$.subscribe((highscore: Person[]) => {
             this.highscoreListe = highscore;
         });
+    }
+    checkDisplay() {
+        this.responsiveService.displayGroesseAnpassen();
     }
 }

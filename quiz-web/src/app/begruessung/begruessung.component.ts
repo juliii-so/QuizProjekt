@@ -24,7 +24,6 @@ export class BegruessungComponent implements OnInit {
         this.namensService.aktualisiereNamen();
     }
     nameSpeichern(neuerName: string) {
-        console.log(neuerName);
         if (neuerName) {
             this.namensService.aktualisiereAktuellenNamen(neuerName);
             this.namen.push(neuerName);
