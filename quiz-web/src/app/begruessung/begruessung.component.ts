@@ -1,3 +1,4 @@
+import { PersoenlichComponent } from './../ergebnis/persoenlich/persoenlich.component';
 import { Observable } from 'rxjs';
 import { ButtonService } from './../fragen/button.service';
 import { NamensService } from './namens.service';
@@ -26,7 +27,11 @@ export class BegruessungComponent implements OnInit {
     nameSpeichern(neuerName: string) {
         if (neuerName) {
             this.namensService.aktualisiereAktuellenNamen(neuerName);
-            if (!this.namen.includes(neuerName)) {
+            if (this.namen.includes(neuerName)) {
+                alert(
+                    'Den Namen gab es schon. Du kannst unter diesem Namen die Punkte verbessern.'
+                );
+            } else {
                 this.namen.push(neuerName);
             }
             // Button aktivieren
