@@ -6,10 +6,8 @@ import { NamensService } from './../begruessung/namens.service';
 
     templateUrl: './ergebnis.component.html',
 
-    styleUrls: ['./ergebnis.component.css']
+    styleUrls: ['./ergebnis.component.css'],
 })
 export class ErgebnisComponent {
-
     constructor(public namensService: NamensService) {}
-
 }

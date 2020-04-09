@@ -23,7 +23,7 @@ export class FragenService {
         return await this._http
             .get<FrageI>(this.urlFrage, { params: params })
             .pipe(
-                map(requestDaten => {
+                map((requestDaten) => {
                     return new FrageGemischt(
                         new Frage(
                             requestDaten.frage,

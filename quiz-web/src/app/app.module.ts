@@ -1,3 +1,4 @@
+import { ResponsiveService } from './ergebnis/highscore/responsive.service';
 import { PersoenlichComponent } from './ergebnis/persoenlich/persoenlich.component';
 import { HighscoreComponent } from './ergebnis/highscore/highscore.component';
 import { ButtonService } from './fragen/button.service';
@@ -21,14 +22,14 @@ import { FragenService } from './fragen/fragen.service';
         BegruessungComponent,
         ErgebnisComponent,
         HighscoreComponent,
-        PersoenlichComponent
+        PersoenlichComponent,
     ],
 
     imports: [
         BrowserModule,
         HttpModule,
         HttpClientModule,
-        HttpClientJsonpModule
+        HttpClientJsonpModule,
     ],
 
     providers: [
@@ -36,9 +37,10 @@ import { FragenService } from './fragen/fragen.service';
         FragenService,
         AntwortService,
         ErgebnisService,
-        ButtonService
+        ButtonService,
+        ResponsiveService,
     ],
 
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

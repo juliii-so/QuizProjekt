@@ -45,7 +45,7 @@ export class ErgebnisService {
         return await this._http
             .get<PersonI>(this.urlHighscore, { params: params })
             .pipe(
-                map(requestDaten => {
+                map((requestDaten) => {
                     return new Person(
                         requestDaten.name,
                         requestDaten.anzahlFragen,
@@ -62,7 +62,7 @@ export class ErgebnisService {
         return await this._http
             .get<PersonI>(this.urlSpieler, { params: params })
             .pipe(
-                map(requestDaten => {
+                map((requestDaten) => {
                     return new Person(
                         requestDaten.name,
                         requestDaten.anzahlFragen,

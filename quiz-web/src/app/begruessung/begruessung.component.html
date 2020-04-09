@@ -23,8 +23,10 @@
             Speichern
         </button>
     </div>
-    <p>Letzte Spieler</p>
-    <ul>
-        <li *ngFor="let name of namen">{{ name }}</li>
-    </ul>
+    <p>Letzte Spieler:</p>
+    <span *ngFor="let name of namen">- {{ name }} -</span>
+    <p>
+        Diese Spielernamen sind vergeben. Wenn du für für einen dieser Spieler
+        weiterspielen willst, gib den Namen ein.
+    </p>
 </div>

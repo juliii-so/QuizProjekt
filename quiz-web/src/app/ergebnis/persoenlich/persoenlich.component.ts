@@ -8,7 +8,7 @@ import { Person } from './../person';
 
     templateUrl: './persoenlich.component.html',
 
-    styleUrls: ['./persoenlich.component.css']
+    styleUrls: ['./persoenlich.component.css'],
 })
 export class PersoenlichComponent implements OnInit {
     aktuellerSpieler$: Observable<Person>;
@@ -20,7 +20,7 @@ export class PersoenlichComponent implements OnInit {
         this.ergebnisService.aktualisiereDaten();
     }
     async aktualisieren() {
-        this.aktuellerSpieler$.subscribe(value => {
+        this.aktuellerSpieler$.subscribe((value) => {
             this.aktuellerSpieler = value;
         });
     }

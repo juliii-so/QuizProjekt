@@ -30,13 +30,12 @@ public class FragenController {
 
 		return ((List<FrageEntity>) fragenRepository.findAll()).get(index);
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, path = "/getAnzahl", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public long anzahlGet() {
-		
+
 		return fragenRepository.count();
 	}
-	
 
 }

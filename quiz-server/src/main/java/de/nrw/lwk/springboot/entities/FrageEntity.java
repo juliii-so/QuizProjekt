@@ -1,7 +1,5 @@
 package de.nrw.lwk.springboot.entities;
 
-import java.util.Random;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,8 +33,6 @@ public class FrageEntity {
 		this.antwortF2 = antwortF2;
 		this.antwortF3 = antwortF3;
 	}
-
-
 
 	public String getFrage() {
 		return frage;

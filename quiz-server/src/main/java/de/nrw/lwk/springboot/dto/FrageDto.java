@@ -19,7 +19,6 @@ public class FrageDto {
 		this.fAntwort2 = fAntwort2;
 		this.fAntwort3 = fAntwort3;
 	}
-	
 
 	public String getFrage() {
 		return frage;
@@ -60,6 +59,5 @@ public class FrageDto {
 	public void setfAntwort3(String fAntwort3) {
 		this.fAntwort3 = fAntwort3;
 	}
-	
 
 }

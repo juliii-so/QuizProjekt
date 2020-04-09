@@ -12,7 +12,7 @@ export class FrageGemischt {
                     frage.antwortR,
                     frage.antwortF1,
                     frage.antwortF2,
-                    frage.antwortF3
+                    frage.antwortF3,
                 ];
                 break;
 
@@ -23,7 +23,7 @@ export class FrageGemischt {
                     frage.antwortF1,
                     frage.antwortR,
                     frage.antwortF2,
-                    frage.antwortF3
+                    frage.antwortF3,
                 ];
                 break;
             case 3:
@@ -33,7 +33,7 @@ export class FrageGemischt {
                     frage.antwortF1,
                     frage.antwortF2,
                     frage.antwortR,
-                    frage.antwortF3
+                    frage.antwortF3,
                 ];
                 break;
             case 4:
@@ -43,7 +43,7 @@ export class FrageGemischt {
                     frage.antwortF1,
                     frage.antwortF2,
                     frage.antwortF3,
-                    frage.antwortR
+                    frage.antwortR,
                 ];
                 break;
         }

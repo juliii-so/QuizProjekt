@@ -1,7 +1,7 @@
-import { ButtonService } from './button.service';
-import { AntwortService } from './antwort.service';
+import { NamensService } from './../begruessung/namens.service';
 import { Component, OnInit } from '@angular/core';
-import { ErgebnisService } from './../ergebnis/ergebnis.service';
+import { AntwortService } from './antwort.service';
+import { ButtonService } from './button.service';
 import { FragenService } from './fragen.service';
 
 @Component({
@@ -9,46 +9,61 @@ import { FragenService } from './fragen.service';
 
     templateUrl: './fragen.component.html',
 
-    styleUrls: ['./fragen.component.css']
+    styleUrls: ['./fragen.component.css'],
 })
 export class FragenComponent implements OnInit {
     static fragenService;
     title = 'quiz-app';
-
+    private schonAufSeite: number[] = [];
     constructor(
         private fragenService: FragenService,
         private antwortService: AntwortService,
-        private buttonService: ButtonService
+        private buttonService: ButtonService,
+        private namensService: NamensService
     ) {}
     async ngOnInit() {
-        await this.alleFragenErzeugen();
+        this.neueFrage();
     }
-    async alleFragenErzeugen() {
+    async neueFrage() {
+        //alte Frage entfernen
+        const element = document.getElementById('PlatzhalterFuerFragen');
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+
         const fragenObjekt = document.createElement('div');
-        fragenObjekt.classList.add('alleFragen');
-        // Anzahl der Fragen beliebig, sobald DB voller
+        fragenObjekt.classList.add('Frage');
         const anzahlInDB = await this.fragenService.getAnzahl();
-        const schonAufSeite: number[] = [];
-        for (let i = 0; i < 8; i++) {
-            // Zufällige Frage bekommen, die noch nicht auf Seite ist
-            let index: number;
+
+        // Zufällige Frage bekommen, die noch nicht auf Seite ist
+        let index: number;
+        if (this.schonAufSeite.length >= anzahlInDB) {
+            fragenObjekt.appendChild(this.alleGespielt());
+            this.schonAufSeite = [];
+        } else {
             do {
                 index = Math.floor(Math.random() * anzahlInDB);
-            } while (schonAufSeite.includes(index));
+            } while (this.schonAufSeite.includes(index));
             // aus Datenbank abfragen mit HTTP GET
             fragenObjekt.appendChild(
                 this.frageErzeugen(
                     await this.fragenService.getFrage(index),
-                    i + 1
+                    this.schonAufSeite.length + 1
                 )
             );
-            schonAufSeite.push(index);
+            this.schonAufSeite.push(index);
         }
         document
             .getElementById('PlatzhalterFuerFragen')
             .appendChild(fragenObjekt);
     }
-
+    public alleGespielt() {
+        const frageUndAntworten = document.createElement('div');
+        frageUndAntworten.textContent =
+            'Du hast alle Fragen durchgespielt. ' +
+            'Wechsele den Spieler oder verbessere dich in den alten Fragen';
+        return frageUndAntworten;
+    }
     public frageErzeugen(frageAusDB, id) {
         const frageUndAntworten = document.createElement('div');
         frageUndAntworten.classList.add('frage' + id);
@@ -77,21 +92,22 @@ export class FragenComponent implements OnInit {
         antwort: string,
         richtig: number
     ) {
-        const button = document.createElement('button');
+        let button = document.createElement('button');
         button.textContent = antwort;
-        button.type = 'submit';
+        // button.type = 'submit';
         const as = this.antwortService;
-        button.onclick = function() {
+        button.onclick = function () {
             as.frageBeantwortet(idFrage, richtig, idAntwort + 1);
         };
         button.classList.add(
             'frage' + idFrage,
             'antwort' + (idAntwort + 1) + 'frage' + idFrage,
-            'deaktiviert',
             'antwort'
         );
         // Damit zu Beginn deaktiviert und man erst Namen eingeben muss
-        button.setAttribute('disabled', 'true');
+        if (this.namensService.getName() === '') {
+            button = this.buttonService.deaktivierenButton(button);
+        }
         return button;
     }
 }

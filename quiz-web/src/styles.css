@@ -18,26 +18,37 @@ div.text {
     color: rgb(0, 0, 0);
 }
 button {
-    background-color: white;
+    background-color: darkcyan;
     border-style: solid;
     margin-top: 5px;
-    color: darkcyan;
-    border-color: darkcyan;
-}
-
-button {
+    color: white;
+    border-color: cyan;
     display: block;
     width: 100%;
     text-align: left;
 }
 button:hover {
-    background-color: white;
-    color: cyan;
+    background-color: cyan;
+    color: white;
     border-color: cyan;
 }
 button:active {
-    background-color: cyan;
+    background-color: white;
+    color: cyan;
+}
+.antwort {
+    background-color: white;
+    color: darkcyan;
+    border-color: darkcyan;
+}
+.antwort:hover {
+    background-color: darkcyan;
     color: white;
+    border-color: darkcyan;
+}
+.antwort:active {
+    background-color: cyan;
+    color: darkcyan;
 }
 button.richtig,
 button.richtig:hover,
@@ -53,9 +64,10 @@ button.falsch.active {
     color: white;
     border-color: darkcyan;
 }
+button.nochDeaktiviert,
 button.nichtgewaehlt,
 button.nichtgewaehlt:hover,
-button.nichtgewaehlt.active {
+button.nichtgewaehlt:active {
     opacity: 0.5;
 }
 

@@ -6,15 +6,15 @@ div.titel {
     background-color: rgb(119, 91, 65);
     display: block;
 }
-#namensEingabe{
-    width:100%;
+#namensEingabe {
+    width: 100%;
 }
 button.speichern {
-    display:inline-block;
-    width:30%;
+    display: inline-block;
+    width: 30%;
     text-align: center;
 }
 input {
-    display:inline-block;
-    width:70%;
+    display: inline-block;
+    width: 70%;
 }

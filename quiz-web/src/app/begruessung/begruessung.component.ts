@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
     templateUrl: './begruessung.component.html',
 
-    styleUrls: ['./begruessung.component.css']
+    styleUrls: ['./begruessung.component.css'],
 })
 export class BegruessungComponent implements OnInit {
     title = 'quiz-app';
@@ -33,7 +33,7 @@ export class BegruessungComponent implements OnInit {
         }
     }
     async aktualisieren() {
-        this.namen$.subscribe(value => {
+        this.namen$.subscribe((value) => {
             this.namen = value;
         });
     }

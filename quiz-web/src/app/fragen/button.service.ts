@@ -19,7 +19,7 @@ export class ButtonService {
                     i === antwort ? 'gewaehlt' : 'nichtgewaehlt'
                 );
             // Button deaktivieren
-            this.deaktivieren('antwort' + i + 'frage' + frage);
+            this.deaktivierenID('antwort' + i + 'frage' + frage);
         }
     }
     public alleAktivieren() {
@@ -39,6 +39,10 @@ export class ButtonService {
             document
                 .getElementsByClassName('antwort')
                 .item(i)
+                .classList.remove('nochDeaktiviert');
+            document
+                .getElementsByClassName('antwort')
+                .item(i)
                 .classList.remove('gewaehlt');
             document
                 .getElementsByClassName('antwort')
@@ -54,7 +58,7 @@ export class ButtonService {
                 .classList.remove('falsch');
         }
     }
-    public deaktivieren(idKlasse: string) {
+    public deaktivierenID(idKlasse: string) {
         document
             .getElementsByClassName(idKlasse)
             .item(0)
@@ -63,5 +67,10 @@ export class ButtonService {
             .getElementsByClassName(idKlasse)
             .item(0)
             .classList.add('deaktiviert');
+    }
+    public deaktivierenButton(button: HTMLButtonElement) {
+        button.setAttribute('disabled', 'true');
+        button.classList.add('nochDeaktiviert');
+        return button;
     }
 }
