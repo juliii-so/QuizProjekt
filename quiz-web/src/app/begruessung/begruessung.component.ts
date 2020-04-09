@@ -26,7 +26,9 @@ export class BegruessungComponent implements OnInit {
     nameSpeichern(neuerName: string) {
         if (neuerName) {
             this.namensService.aktualisiereAktuellenNamen(neuerName);
-            this.namen.push(neuerName);
+            if (!this.namen.includes(neuerName)) {
+                this.namen.push(neuerName);
+            }
             // Button aktivieren
             this.buttonService.alleAktivieren();
         }
