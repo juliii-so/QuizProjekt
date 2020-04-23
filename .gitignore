@@ -11,3 +11,4 @@
 *.war
 *.jar
 *.jpg
+/quiz-server/target
