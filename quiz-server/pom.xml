@@ -108,11 +108,11 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>C:\Users\julia\Documents\Arbeit\QuizProjekt\quiz-server\src\main\webapp\
+							<outputDirectory>.\src\main\webapp\
 							</outputDirectory>
 							<resources>
 								<resource>
-									<directory>C:\Users\julia\Documents\Arbeit\QuizProjekt\quiz-web\dist\quiz-app
+									<directory>..\quiz-web\dist\quiz-app
 									</directory>
 								</resource>
 							</resources>
