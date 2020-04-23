@@ -1,0 +1,50 @@
+ CREATE TABLE "SYSTEM"."QUIZ_FRAGEN" 
+   (	"ID" NUMBER(10,0), 
+	"ANTWORTF1" VARCHAR2(255 BYTE), 
+	"ANTWORTF2" VARCHAR2(255 BYTE), 
+	"ANTWORTF3" VARCHAR2(255 BYTE), 
+	"ANTWORTR" VARCHAR2(255 BYTE), 
+	"FRAGE" VARCHAR2(255 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.QUIZ_FRAGEN
+SET DEFINE OFF;
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('138','Fleisch','Schokolade','Kohl','Nudeln','Was dürfen Kaninchen fressen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('139','3 Zehen an jedem Fuß','Seidenhühner haben keine Zehen','8 Zehen','5 Zehen an jedem Fuß','Wie viele Zehen haben Seidenhühner?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('140','in einer Höhle','in den Baumwipfeln','Eichhörnchen leben nicht','in einem Kobel','Wo leben Eichhörnchen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('2','Tiger','Schnecke','Hase','Gepard','Welches Tier ist schneller?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('3','Leopard','Katze','Hund','Zebra','Welches Tierart hat immer gestreiftes Fell, egal welche Rasse es ist?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('88','Schweinmann','Mannschwein','Sau','Eber','Wie heißt ein männliches Schwein?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('32','Elefant','Pottwal','Giraffe','Blauwal','Was ist das größte Säugetier der Welt?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('12','Weiß','Braun','Rot','Grün','Welche Farbe hat die Schale der Eier von Fasanen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('54','Exakt morgens um 6 Uhr','Exakt bei Sonnenaufgang','Nie','Über den Tag verteilt','Wann Krähen Hähne?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('23','In einem Bau','In einer Höhle','Auf offener Wiese','In einer Senke eines Feldes','Wo bringen Feldhasen ihre Jungen zur Welt?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('11','2','4','8','6','Wie viele Beine haben Bienen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('22','2m','9m','12m','6m','WIe groß werden Giraffen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('33','Ohren','Hörer','Fächer','Löffel','WIe nennt man die Ohren eines Hasen?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('44','Babyhuhn','Hühnchen','Hähnchen','Küken','Wie heißt der Nachwuchs von Hühnern?');
+Insert into SYSTEM.QUIZ_FRAGEN (ID,ANTWORTF1,ANTWORTF2,ANTWORTF3,ANTWORTR,FRAGE) values ('99','Fellwechsel','Federwechsel','Es gibt keinen Begriff dafür','Mauser','Wie heißt es, wenn die Vögel zum Winter oder zum Sommer hin ihre Federn dem Wetter anpassen?');
+--------------------------------------------------------
+--  DDL for Index SYS_C007209
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C007209" ON "SYSTEM"."QUIZ_FRAGEN" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table QUIZ_FRAGEN
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."QUIZ_FRAGEN" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "SYSTEM"."QUIZ_FRAGEN" MODIFY ("FRAGE" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."QUIZ_FRAGEN" MODIFY ("ANTWORTR" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."QUIZ_FRAGEN" MODIFY ("ANTWORTF1" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."QUIZ_FRAGEN" MODIFY ("ID" NOT NULL ENABLE);
