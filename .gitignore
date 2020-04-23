@@ -1,8 +1,13 @@
 /quiz-web/node_modules
 /quiz-web/src/main/web/node
 /quiz-web/dist
-/quiz-web/target/*
+/quiz-web/target
+
 /quiz-server/src/main/webapp
-/quiz-server/target/*
+/quiz-server/target
+
 .settings
+
 *.war
+*.jar
+*.jpg
